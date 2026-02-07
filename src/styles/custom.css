@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  --sl-color-accent-low: #1a0f2e;
+  --sl-color-accent: #7c3aed;
+  --sl-color-accent-high: #c4b5fd;
+  --sl-color-white: #f5f0ff;
+  --sl-color-gray-1: #e8e0f0;
+  --sl-color-gray-2: #c4b8d8;
+  --sl-color-gray-3: #8b7da0;
+  --sl-color-gray-4: #5a4d6e;
+  --sl-color-gray-5: #352a47;
+  --sl-color-gray-6: #231a35;
+  --sl-color-black: #0d0a14;
+
+  --sl-color-bg: #0d0a14;
+  --sl-color-bg-nav: #110e1c;
+  --sl-color-bg-sidebar: #0f0c18;
+
+  --sl-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sl-font-mono:
+    "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  --sl-text-h1: 2.25rem;
+  --sl-text-h2: 1.75rem;
+  --sl-text-h3: 1.35rem;
+
+  --rune-gold: #d4a844;
+  --rune-gold-dim: #a07830;
+  --rune-ember: #e85d3a;
+  --rune-arcane: #7c3aed;
+  --rune-frost: #38bdf8;
+  --rune-verdant: #4ade80;
+  --rune-shadow: #1a0f2e;
+  --rune-parchment: #f5f0e8;
+
+  --sl-color-text-accent: var(--rune-gold);
+}
+
+[data-theme="light"] {
+  --sl-color-accent-low: #ede9fe;
+  --sl-color-accent: #6d28d9;
+  --sl-color-accent-high: #3b0764;
+  --sl-color-white: #1a1025;
+  --sl-color-gray-1: #2d2240;
+  --sl-color-gray-2: #4a3d60;
+  --sl-color-gray-3: #6b5d80;
+  --sl-color-gray-4: #b8adc8;
+  --sl-color-gray-5: #e0d8ec;
+  --sl-color-gray-6: #f0ecf5;
+  --sl-color-black: #faf8ff;
+
+  --sl-color-bg: #faf8ff;
+  --sl-color-bg-nav: #f0ecf5;
+  --sl-color-bg-sidebar: #f5f2fa;
+
+  --rune-gold: #9a7520;
+  --rune-arcane: #6d28d9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-family: "New Rocker", "Georgia", serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.hero h1 {
+  font-family: "New Rocker", "Georgia", serif !important;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.site-title {
+  font-family: "New Rocker", "Georgia", serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.03em;
+}
+
+.sl-markdown-content h2 {
+  border-bottom: 1px solid var(--rune-gold-dim);
+  padding-bottom: 0.4em;
+}
+
+.expressive-code {
+  --ec-codeBg: #12101e !important;
+  --ec-codeBrd: #2a1f40 !important;
+}
+
+[data-theme="light"] .expressive-code {
+  --ec-codeBg: #f0ecf5 !important;
+  --ec-codeBrd: #d8d0e8 !important;
+}
+
+.sl-markdown-content :not(pre) > code {
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--sl-color-accent-high);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+[data-theme="light"] .sl-markdown-content :not(pre) > code {
+  background: rgba(109, 40, 217, 0.08);
+  color: var(--sl-color-accent);
+}
+
+nav.sidebar .top-level > li > details > summary,
+nav.sidebar .top-level > li > a {
+  font-family: "New Rocker", "Georgia", serif;
+  font-weight: 400 !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.card {
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: rgba(124, 58, 237, 0.04);
+  border-radius: 8px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--rune-gold);
+  box-shadow: 0 0 20px rgba(212, 168, 68, 0.08);
+}
+
+.card .card-title {
+  font-family: "New Rocker", "Georgia", serif;
+}
+
+.sl-markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.sl-markdown-content th {
+  font-family: "New Rocker", "Georgia", serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.sl-markdown-content td,
+.sl-markdown-content th {
+  padding: 0.6em 1em;
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.sl-markdown-content tr:nth-child(even) {
+  background: rgba(124, 58, 237, 0.03);
+}
+
+.sl-markdown-content blockquote {
+  border-left: 3px solid var(--rune-gold);
+  background: rgba(212, 168, 68, 0.05);
+  padding: 0.8em 1.2em;
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+}
+
+.starlight-aside {
+  border-radius: 6px;
+}
+
+.sl-markdown-content a {
+  color: var(--sl-color-accent-high);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.sl-markdown-content a:hover {
+  border-bottom-color: var(--rune-gold);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: #fff;
+}
+
+.hero .action {
+  border-radius: 6px;
+  font-family: "New Rocker", "Georgia", serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.pagination-links a {
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+.pagination-links a:hover {
+  border-color: var(--rune-gold);
+}
+
+.rune-keyword {
+  color: var(--rune-arcane);
+  font-family: var(--sl-font-mono);
+  font-weight: 600;
+}
+
+.rune-type {
+  color: var(--rune-gold);
+  font-family: var(--sl-font-mono);
+  font-weight: 500;
+}
