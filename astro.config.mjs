@@ -14,6 +14,7 @@ runelangGrammar.name = "rune";
 runelangGrammar.aliases = ["runelang"];
 
 export default defineConfig({
+  site: "https://runelang.com",
   integrations: [
     starlight({
       title: "RuneLang",
