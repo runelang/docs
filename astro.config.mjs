@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightVersions from "starlight-versions";
 import { readFileSync } from "node:fs";
 
 const runelangGrammar = JSON.parse(
@@ -17,6 +18,13 @@ export default defineConfig({
   site: "https://runelang.com",
   integrations: [
     starlight({
+      plugins: [
+        starlightVersions({
+          versions: [
+            { slug: "0.1.0", label: "v0.1.0" },
+          ],
+        }),
+      ],
       title: "RuneLang",
       tagline: "A fantasy-themed programming language built in Rust.",
       social: [
