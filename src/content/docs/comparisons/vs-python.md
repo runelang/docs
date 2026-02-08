@@ -187,27 +187,37 @@ end of Oracle
 
 ### Performance
 
-RuneLang's **bytecode VM** is compiled to native code via Rust, delivering competitive performance with Python while beating Node.js on most benchmarks.
+RuneLang's **bytecode VM** is compiled to native code via Rust, delivering competitive performance with Python across 17 benchmarks.
 
-#### v0.1.0-pre Benchmarks
+#### v0.1.1-pre Benchmarks
 
-Tested on Windows 11 (64 runs per benchmark, median reported):
+Tested on Windows 11, Python 3.13 (9 runs per benchmark, median reported):
 
-| Benchmark | RuneLang | Python 3.11 | Comparison |
-|-----------|----------|-------------|------------|
-| **Fibonacci** (recursive, n=30) | 132ms | 120ms | 1.1x slower |
-| **Loop Sum** (1M iterations) | 85ms | 94ms | **1.1x faster** ⚡ |
-| **String Concat** (10K appends) | 64ms | 56ms | 1.2x slower |
-| **Array Ops** (50K map/filter/reduce) | 77ms | 68ms | 1.1x slower |
-| **Math Heavy** (100K sqrt/sin/cos) | 75ms | 71ms | 1.1x slower |
-| **Class Creation** (10K objects) | 70ms | 56ms | 1.3x slower |
-| **Error Handling** (10K try/catch) | 63ms | 57ms | 1.1x slower |
-| **Nested Loops** (500x500) | 74ms | 65ms | 1.1x slower |
-| **Map Ops** (10K insert+lookup) | 67ms | 55ms | 1.2x slower |
+| Benchmark                             | RuneLang | Python 3.13 | Comparison      |
+| ------------------------------------- | -------- | ----------- | --------------- |
+| **Fibonacci** (recursive, n=30)       | 114ms    | 121ms       | **1.1x faster** |
+| **Loop Sum** (1M iterations)          | 82ms     | 97ms        | **1.2x faster** |
+| **String Concat** (10K appends)       | 69ms     | 55ms        | 1.2x slower     |
+| **Array Ops** (50K map/filter/reduce) | 74ms     | 63ms        | 1.2x slower     |
+| **Math Heavy** (100K sqrt/sin/cos)    | 74ms     | 70ms        | 1.1x slower     |
+| **Class Creation** (10K objects)      | 68ms     | 56ms        | 1.2x slower     |
+| **Error Handling** (10K try/catch)    | 63ms     | 53ms        | 1.2x slower     |
+| **Nested Loops** (500x500)            | 71ms     | 66ms        | 1.1x slower     |
+| **Map/Dict Ops** (10K insert+lookup)  | 69ms     | 57ms        | 1.2x slower     |
+| **Closures** (100K create+call)       | 75ms     | 71ms        | 1.1x slower     |
+| **While Loop** (1M countdown)         | 90ms     | 116ms       | **1.3x faster** |
+| **Method Calls** (100K dispatches)    | 77ms     | 56ms        | 1.4x slower     |
+| **Prime Sieve** (50K candidates)      | 84ms     | 72ms        | 1.2x slower     |
+| **Binary Trees** (depth 15)           | 88ms     | 71ms        | 1.2x slower     |
+| **Collatz** (100K sequences)          | 544ms    | 540ms       | 1.0x slower     |
+| **Ackermann** (3, 9)                  | 347ms    | 777ms       | **2.2x faster** |
+| **Inheritance** (10K objects)         | 69ms     | 56ms        | 1.2x slower     |
 
 **Key takeaways:**
-- RuneLang is **competitive** with Python across the board (within 1.1-1.3x)
-- Beats Python on **loop-heavy** workloads
+
+- RuneLang **beats Python** on fibonacci, loop sum, while loops, and ackermann
+- **2.2x faster** on deep recursion (ackermann) thanks to optimized call frames
+- Competitive across the board (within 1.1-1.4x on most benchmarks)
 - No GIL, no garbage collector pauses, predictable performance
 - Compiled to native code for instant startup (no warmup)
 

@@ -15,21 +15,27 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
 <CardGrid stagger>
-	<Card title="Forged in Rust" icon="seti:rust">
-		Bytecode VM with aggressive optimizations. **Beats Node.js on 7/9 benchmarks**. Competitive with Python. Zero dependencies. Single native binary.
-	</Card>
-	<Card title="Safe by Default" icon="approve-check-circle">
-		Variables are immutable by default. No implicit type coercion. No `undefined`. No `null` surprises. Write code that does what you expect.
-	</Card>
-	<Card title="Fantasy-Themed Syntax" icon="star">
-		Functions are **Rituals**. Classes are **Guilds**. Arrays are **Scrolls**. Every keyword tells a story. Programming has never been this immersive.
-	</Card>
-	<Card title="Batteries Included" icon="rocket">
-		Math, file I/O, string manipulation, higher-order functions, pattern matching, error handling, and a module system. Everything you need, out of the box.
-	</Card>
+  <Card title="Forged in Rust" icon="seti:rust">
+    Bytecode VM with aggressive optimizations. **Beats Node.js on 9/17
+    benchmarks**. **2.2x faster than Python on recursion**. Zero dependencies.
+    Single native binary.
+  </Card>
+  <Card title="Safe by Default" icon="approve-check-circle">
+    Variables are immutable by default. No implicit type coercion. No
+    `undefined`. No `null` surprises. Write code that does what you expect.
+  </Card>
+  <Card title="Fantasy-Themed Syntax" icon="star">
+    Functions are **Rituals**. Classes are **Guilds**. Arrays are **Scrolls**.
+    Every keyword tells a story. Programming has never been this immersive.
+  </Card>
+  <Card title="Batteries Included" icon="rocket">
+    Math, file I/O, string manipulation, higher-order functions, pattern
+    matching, error handling, and a module system. Everything you need, out of
+    the box.
+  </Card>
 </CardGrid>
 
 ---
@@ -65,6 +71,6 @@ player.strike(enemy);
 
 RuneLang was built for developers who want a language that's **fast**, **safe**, and **genuinely fun to write**. It takes the readability of Python, the expressiveness of JavaScript, wraps it in a fantasy-themed syntax, and compiles to bytecode with performance that rivals both.
 
-**v0.1.0-pre performance**: Beats Node.js on loops, strings, collections, math, classes, error handling, and maps. Competitive with Python across all benchmarks.
+**v0.1.1-pre performance**: Beats Node.js on 9/17 benchmarks. Beats Python on fibonacci, loops, and recursion (2.2x faster on ackermann). Competitive across all 17 benchmarks.
 
 Whether you're building a side project, teaching someone to code, or just want to write software that feels like casting spells — RuneLang is your weapon of choice.

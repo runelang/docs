@@ -255,34 +255,43 @@ end of Trap
 - **No `undefined`.** Variables must be initialized.
 - **No `this` confusion.** `thy` is always the instance.
 - **Immutable by default.** Safer than `const` which only prevents reassignment.
-- **Better performance.** Beats Node.js on 7 out of 9 benchmarks.
+- **Better performance.** Beats Node.js on 9 out of 17 benchmarks.
 - **Zero dependencies.** Single binary, no `node_modules`.
 
 ### Performance
 
-RuneLang's bytecode VM delivers **faster execution than Node.js** on most benchmarks:
+RuneLang's bytecode VM delivers competitive execution with Node.js, winning on over half the benchmarks:
 
-#### v0.1.0-pre Benchmarks
+#### v0.1.1-pre Benchmarks
 
-Tested on Windows 11, Node.js v23 (64 runs per benchmark, median reported):
+Tested on Windows 11, Node.js v23.5 (9 runs per benchmark, median reported):
 
-| Benchmark | RuneLang | Node.js | Comparison |
-|-----------|----------|---------|------------|
-| **Fibonacci** (recursive, n=30) | 132ms | 97ms | 1.4x slower |
-| **Loop Sum** (1M iterations) | 85ms | 91ms | **1.1x faster** ⚡ |
-| **String Concat** (10K appends) | 64ms | 80ms | **1.2x faster** ⚡ |
-| **Array Ops** (50K map/filter/reduce) | 77ms | 89ms | **1.1x faster** ⚡ |
-| **Math Heavy** (100K sqrt/sin/cos) | 75ms | 84ms | **1.1x faster** ⚡ |
-| **Class Creation** (10K objects) | 70ms | 79ms | **1.1x faster** ⚡ |
-| **Error Handling** (10K try/catch) | 63ms | 87ms | **1.4x faster** ⚡ |
-| **Nested Loops** (500x500) | 74ms | 76ms | **1.0x faster** ⚡ |
-| **Map Ops** (10K insert+lookup) | 67ms | 77ms | **1.1x faster** ⚡ |
+| Benchmark                             | RuneLang | Node.js | Comparison      |
+| ------------------------------------- | -------- | ------- | --------------- |
+| **Fibonacci** (recursive, n=30)       | 114ms    | 82ms    | 1.4x slower     |
+| **Loop Sum** (1M iterations)          | 82ms     | 79ms    | 1.0x slower     |
+| **String Concat** (10K appends)       | 69ms     | 81ms    | **1.2x faster** |
+| **Array Ops** (50K map/filter/reduce) | 74ms     | 76ms    | **1.0x faster** |
+| **Math Heavy** (100K sqrt/sin/cos)    | 74ms     | 85ms    | **1.2x faster** |
+| **Class Creation** (10K objects)      | 68ms     | 78ms    | **1.1x faster** |
+| **Error Handling** (10K try/catch)    | 63ms     | 93ms    | **1.5x faster** |
+| **Nested Loops** (500x500)            | 71ms     | 84ms    | **1.2x faster** |
+| **Map/Dict Ops** (10K insert+lookup)  | 69ms     | 78ms    | **1.1x faster** |
+| **Closures** (100K create+call)       | 75ms     | 74ms    | 1.0x slower     |
+| **While Loop** (1M countdown)         | 90ms     | 78ms    | 1.2x slower     |
+| **Method Calls** (100K dispatches)    | 77ms     | 86ms    | **1.1x faster** |
+| **Prime Sieve** (50K candidates)      | 84ms     | 79ms    | 1.1x slower     |
+| **Binary Trees** (depth 15)           | 88ms     | 84ms    | 1.0x slower     |
+| **Collatz** (100K sequences)          | 544ms    | 93ms    | 5.8x slower     |
+| **Ackermann** (3, 9)                  | 347ms    | 107ms   | 3.2x slower     |
+| **Inheritance** (10K objects)         | 69ms     | 75ms    | **1.1x faster** |
 
-**Wins: 7/9 benchmarks** 🏆
+**Wins: 9/17 benchmarks**
 
-RuneLang beats Node.js on loops, strings, collections, math, classes, error handling, and maps. The only benchmarks where Node.js leads are highly recursive workloads (fibonacci), where V8's JIT compiler has an advantage.
+RuneLang beats Node.js on strings, collections, math, classes, error handling, nested loops, maps, method calls, and inheritance. Node.js leads on highly recursive and deeply iterative workloads (fibonacci, ackermann, collatz) where V8's JIT compiler has an advantage.
 
 **Key advantages:**
+
 - Instant startup (no JIT warmup)
 - Predictable performance (no hidden optimization tiers)
 - Lower memory usage (no garbage collector overhead)

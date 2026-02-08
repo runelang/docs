@@ -3,7 +3,7 @@ title: Introduction
 description: What is RuneLang and why should you care?
 ---
 
-RuneLang is a general-purpose programming language with a fantasy RPG-inspired syntax. It compiles to bytecode and runs on a high-performance virtual machine, delivering execution speeds competitive with Python and faster than Node.js on most workloads.
+RuneLang is a general-purpose programming language with a fantasy RPG-inspired syntax. It compiles to bytecode and runs on a high-performance virtual machine, delivering execution speeds competitive with Python and Node.js across 17 benchmarks.
 
 ## Philosophy
 
